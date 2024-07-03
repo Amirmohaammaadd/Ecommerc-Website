@@ -12,6 +12,7 @@ function App() {
     <div className="">
       <Navbar />
       <Hero />
+      <SecondHero />
       <Products />
       <TopProducts />
       <Banner />
