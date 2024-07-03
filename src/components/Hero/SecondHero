@@ -1,0 +1,91 @@
+import image1 from "../../assets/sliderImg/1.jpg";
+import image2 from "../../assets/sliderImg/2.jpg";
+import image3 from "../../assets/sliderImg/3.jpg";
+import image4 from "../../assets/sliderImg/4.jpg";
+
+import { Navigation, Pagination, Autoplay } from "swiper/modules";
+import "swiper/css/effect-fade";
+
+import { Swiper, SwiperSlide } from "swiper/react";
+
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import "swiper/css/scrollbar";
+
+const SecondHero = () => {
+  const ImageList = [
+    {
+      id: 1,
+      img: image1,
+      title: "Upto 50% off on all Men's Wear",
+      description:
+        "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Molestias dolores molestiae placeat tempora minus veritatis, earum sint assumenda asperiores omnis deleniti mollitia dignissimos sapiente ullam quidem aperiam culpa fugit. Sequi.",
+    },
+    {
+      id: 2,
+      img: image2,
+      title: "Upto 50% off on all Men's Wear",
+
+      description:
+        "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Molestias dolores molestiae placeat tempora minus veritatis, earum sint assumenda asperiores omnis deleniti mollitia dignissimos sapiente ullam quidem aperiam culpa fugit. Sequi.",
+    },
+    {
+      id: 3,
+      img: image3,
+      title: "Upto 50% off on all Men's Wear",
+
+      description:
+        "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Molestias dolores molestiae placeat tempora minus veritatis, earum sint assumenda asperiores omnis deleniti mollitia dignissimos sapiente ullam quidem aperiam culpa fugit. Sequi.",
+    },
+    {
+      id: 4,
+      img: image4,
+      title: "Upto 50% off on all Men's Wear",
+
+      description:
+        "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Molestias dolores molestiae placeat tempora minus veritatis, earum sint assumenda asperiores omnis deleniti mollitia dignissimos sapiente ullam quidem aperiam culpa fugit. Sequi.",
+    },
+  ];
+
+  return (
+    <div
+      className="relative overflow-hidden min-h-[550px] sm:min-h-[650px]
+   bg-gray-100 flex justify-center items-center dark:bg-gray-950 dark:text-white duration-200"
+    >
+      {/* ------ background pattern ----- */}
+      <div
+        className="h-[700px] w-[700px] bg-primary/40 absolute
+       -top-1/2 right-0 rounded-3xl rotate-45 "
+      ></div>
+      {/* ------ hero section ----- */}
+      <Swiper
+        modules={[Navigation, Pagination, Autoplay]}
+        autoplay={{
+          delay: 4000,
+          disableOnInteraction: true,
+        }}
+        spaceBetween={50}
+        slidesPerView={1}
+        navigation
+        pagination={{ clickable: true }}
+        className="lg:h-[400px] container pb-8 sm:pb-0"
+      >
+        {ImageList.map((item) => (
+          <SwiperSlide>
+            <div className="flex justify-center">
+              <img
+                src={item.img}
+                alt="None"
+                key={item.id}
+                className="duration-200 w-[90%]"
+              />
+            </div>
+          </SwiperSlide>
+        ))}
+      </Swiper>
+    </div>
+  );
+};
+
+export default SecondHero;
